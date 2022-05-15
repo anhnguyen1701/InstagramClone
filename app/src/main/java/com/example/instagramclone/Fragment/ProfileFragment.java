@@ -25,6 +25,7 @@ import com.example.instagramclone.Adapter.MyPhotoAdapter;
 import com.example.instagramclone.EditProfileActivity;
 import com.example.instagramclone.Model.Post;
 import com.example.instagramclone.Model.User;
+import com.example.instagramclone.OptionActivity;
 import com.example.instagramclone.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -114,6 +115,13 @@ public class ProfileFragment extends Fragment {
                             .child("followers").child(firebaseUser.getUid()).removeValue();
 
                 }
+            }
+        });
+
+        options.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), OptionActivity.class));
             }
         });
 
